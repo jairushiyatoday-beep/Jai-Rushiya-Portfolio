@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Jai Rushiya — Developer Portfolio
 
-## Getting Started
+Welcome to my personal developer portfolio! This project represents my journey as an AI Engineer, Full Stack Developer, and Automation Enthusiast. It showcases the technologies I work with, the projects I've built, and my passion for creating modern, high-performance web experiences.
 
-First, run the development server:
+## 🌐 Live Demo
+
+**Portfolio:** https://your-portfolio-link.com
+
+## ✨ Features
+
+* Modern and responsive UI
+* Cinematic animations and smooth scrolling
+* Interactive 3D elements
+* Optimized performance and SEO
+* Dark futuristic design
+* Mobile-friendly experience
+* Project showcase with live demos
+* Skills, education, experience, and certifications
+* GitHub integration
+
+## 🛠️ Tech Stack
+
+* Next.js
+* React
+* TypeScript
+* Tailwind CSS
+* GSAP
+* Framer Motion
+* React Three Fiber
+* Three.js
+* Lenis Smooth Scroll
+* Lucide React
+* shadcn/ui
+
+## 📂 Project Structure
+
+```text
+app/
+components/
+hooks/
+lib/
+public/
+styles/
+utils/
+```
+
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/jairushiyatoday-beep/your-repository.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000` in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📈 Goals
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This portfolio is built to demonstrate clean architecture, modern UI/UX, smooth animations, and scalable development practices. My goal was to create a fast, immersive, and professional experience while keeping performance and accessibility in mind.
 
-## Learn More
+## 🤝 Let's Connect
 
-To learn more about Next.js, take a look at the following resources:
+I'm always interested in collaborating on innovative projects, AI applications, web development, and automation solutions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* GitHub: https://github.com/jairushiyatoday-beep
+* LinkedIn: *(Add your LinkedIn profile)*
+* Email: *(Add your email)*
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📄 License
 
-## Deploy on Vercel
+This project is open source and available under the MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ If you found this project helpful or inspiring, consider giving it a star. Thanks for stopping by!
