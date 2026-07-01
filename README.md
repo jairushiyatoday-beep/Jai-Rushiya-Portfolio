@@ -75,8 +75,8 @@ This portfolio is built to demonstrate clean architecture, modern UI/UX, smooth 
 I'm always interested in collaborating on innovative projects, AI applications, web development, and automation solutions.
 
 * GitHub: https://github.com/jairushiyatoday-beep
-* LinkedIn: *(Add your LinkedIn profile)*
-* Email: *(Add your email)*
+* LinkedIn: *https://www.linkedin.com/in/jairushiya/*
+* Email: *jairushiya.today@gmail.com*
 
 ## 📄 License
 
