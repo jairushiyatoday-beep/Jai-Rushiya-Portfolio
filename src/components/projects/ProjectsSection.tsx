@@ -123,37 +123,28 @@ export default function ProjectsSection() {
                 
                 {/* Desktop Mockup */}
                 <div className="absolute w-[85%] h-[70%] bg-[#0f172a] rounded-xl border border-white/20 shadow-2xl overflow-hidden transform translate-z-0 group-hover:shadow-[0_0_30px_rgba(0,240,255,0.3)] transition-all duration-500">
-                  <div className="h-6 bg-[#1e293b] flex items-center px-3 gap-1.5">
+                  <div className="h-6 bg-[#1e293b] flex items-center px-3 gap-1.5 relative z-20">
                     <div className="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                     <div className="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                   </div>
-                  <div className="w-full h-[calc(100%-24px)] bg-gradient-to-br from-[#1e1b4b] to-[#0f172a] relative p-4 flex flex-col gap-4">
-                     {/* Fake Dashboard UI */}
-                     <div className="w-full h-12 bg-white/5 rounded-lg flex items-center px-4 justify-between">
-                       <div className="w-24 h-4 bg-white/10 rounded"></div>
-                       <div className="w-8 h-8 rounded-full bg-gradient-to-r from-[--neon-cyan] to-[--neon-purple]"></div>
-                     </div>
-                     <div className="flex gap-4 h-full">
-                       <div className="w-1/3 h-full bg-white/5 rounded-lg"></div>
-                       <div className="w-2/3 h-full flex flex-col gap-4">
-                         <div className="h-1/2 w-full bg-gradient-to-r from-[--neon-cyan]/20 to-[--neon-purple]/20 rounded-lg border border-white/5"></div>
-                         <div className="h-1/2 w-full bg-white/5 rounded-lg"></div>
-                       </div>
-                     </div>
-                  </div>
+                  <img 
+                    src="https://i.ibb.co/B2T3YF8G/Screenshot-2026-07-02-140625.png" 
+                    alt="RojKhata Desktop Dashboard" 
+                    className="w-full h-[calc(100%-24px)] object-cover object-top relative z-10" 
+                  />
                 </div>
 
                 {/* Mobile Mockup */}
                 <div className="absolute -right-4 -bottom-4 w-[25%] h-[60%] bg-[#0f172a] rounded-2xl border-2 border-gray-700 shadow-2xl overflow-hidden transform translate-z-10 group-hover:translate-z-20 group-hover:-translate-y-4 group-hover:-rotate-6 transition-all duration-500">
-                  <div className="absolute top-0 inset-x-0 h-4 bg-black flex justify-center rounded-t-xl">
+                  <div className="absolute top-0 inset-x-0 h-4 bg-black flex justify-center rounded-t-xl z-20">
                     <div className="w-1/3 h-3 bg-black rounded-b-lg"></div>
                   </div>
-                  <div className="w-full h-full pt-6 p-2 bg-gradient-to-b from-[#1e1b4b] to-[#0f172a] flex flex-col gap-2">
-                    <div className="w-full h-24 bg-gradient-to-r from-[--neon-purple]/40 to-[--neon-pink]/40 rounded-lg"></div>
-                    <div className="w-full h-12 bg-white/10 rounded-md"></div>
-                    <div className="w-full h-12 bg-white/10 rounded-md"></div>
-                  </div>
+                  <img 
+                    src="https://i.ibb.co/pB8Lh6yw/Whats-App-Image-2026-06-27-at-6-40-24-PM.jpg" 
+                    alt="RojKhata Mobile App" 
+                    className="w-full h-full object-cover relative z-10" 
+                  />
                 </div>
 
               </div>

@@ -31,7 +31,7 @@ export default function ContactSection() {
     setFormState('loading');
     setErrorMsg('');
     const formData = new FormData(e.currentTarget);
-    formData.append('access_key', 'bf4c9d9d-7fa2-487d-82a5-443c2e12a9d0');
+    formData.append('access_key', '4fd03f6c-16bd-4a94-b2a4-e71cb1fbadb2');
     try {
       const response = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: formData });
       const data = await response.json();

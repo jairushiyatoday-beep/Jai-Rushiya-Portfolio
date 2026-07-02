@@ -34,30 +34,33 @@ const ICONS: Record<string, React.ReactNode> = {
 };
 
 function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number | string>(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   useEffect(() => {
     if (isInView) {
-      let start = 0;
       const end = value;
       const duration = 2000;
       let startTime: number | null = null;
+      const isFloat = value % 1 !== 0;
 
       const step = (timestamp: number) => {
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / duration, 1);
+        const easeProgress = 1 - Math.pow(1 - progress, 4); // easeOutQuart
         
-        // easeOutQuart
-        const easeProgress = 1 - Math.pow(1 - progress, 4);
-        
-        setCount(Math.floor(easeProgress * end));
+        const currentVal = easeProgress * end;
+        if (isFloat) {
+          setCount(currentVal.toFixed(1));
+        } else {
+          setCount(Math.floor(currentVal));
+        }
         
         if (progress < 1) {
           requestAnimationFrame(step);
         } else {
-          setCount(end); // Ensure we end exactly on the value
+          setCount(isFloat ? end.toFixed(1) : end);
         }
       };
       
@@ -75,6 +78,9 @@ function AnimatedCounter({ value, suffix }: { value: number; suffix: string }) {
 export default function StatsSection() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
+  // Custom visual fills for each stats circle
+  const targetFills = [75, 85, 95, 100, 80];
 
   return (
     <section id="stats" ref={sectionRef} className="relative py-24 bg-gradient-to-b from-[#030014] to-[#0a0520] border-t border-white/5 overflow-hidden">
@@ -98,28 +104,36 @@ export default function StatsSection() {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-colors relative overflow-hidden"
+              className="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-all duration-300 relative overflow-hidden"
             >
-              {/* Progress Ring Background */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-16 h-16 opacity-20">
-                <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradient)" strokeWidth="4" 
-                    strokeDasharray="283"
-                    strokeDashoffset={isInView ? 0 : 283}
+              {/* Centered circular progress ring + icon */}
+              <div className="relative w-20 h-20 flex items-center justify-center mb-6">
+                {/* Background Ring */}
+                <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255, 255, 255, 0.03)" strokeWidth="6" />
+                  <circle 
+                    cx="50" 
+                    cy="50" 
+                    r="40" 
+                    fill="none" 
+                    stroke={`url(#gradient-${index})`} 
+                    strokeWidth="6" 
+                    strokeDasharray="251.2"
+                    strokeDashoffset={isInView ? 251.2 * (1 - (targetFills[index] || 80) / 100) : 251.2}
                     className="transition-all duration-1000 ease-out"
-                    style={{ transitionDelay: `${index * 0.1 + 0.5}s` }}
+                    style={{ transitionDelay: `${index * 0.1 + 0.3}s` }}
                   />
                   <defs>
-                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <linearGradient id={`gradient-${index}`} x1="0%" y1="0%" x2="100%" y2="0%">
                       <stop offset="0%" stopColor="#00f0ff" />
                       <stop offset="100%" stopColor="#a855f7" />
                     </linearGradient>
                   </defs>
                 </svg>
-              </div>
-
-              <div className="mb-4 text-[--neon-cyan] group-hover:text-[--neon-purple] transition-colors relative z-10">
-                {ICONS[stat.icon]}
+                {/* Icon */}
+                <div className="text-[--neon-cyan] group-hover:text-[--neon-purple] transition-colors relative z-10">
+                  {ICONS[stat.icon]}
+                </div>
               </div>
               
               <div className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 mb-2">
