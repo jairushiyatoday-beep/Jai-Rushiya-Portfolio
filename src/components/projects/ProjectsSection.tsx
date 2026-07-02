@@ -136,14 +136,11 @@ export default function ProjectsSection() {
                 </div>
 
                 {/* Mobile Mockup */}
-                <div className="absolute -right-4 -bottom-4 w-[25%] h-[60%] bg-[#0f172a] rounded-2xl border-2 border-gray-700 shadow-2xl overflow-hidden transform translate-z-10 group-hover:translate-z-20 group-hover:-translate-y-4 group-hover:-rotate-6 transition-all duration-500">
-                  <div className="absolute top-0 inset-x-0 h-4 bg-black flex justify-center rounded-t-xl z-20">
-                    <div className="w-1/3 h-3 bg-black rounded-b-lg"></div>
-                  </div>
+                <div className="absolute -right-6 -bottom-6 w-[32%] h-[70%] overflow-visible transform translate-z-10 group-hover:translate-z-20 group-hover:-translate-y-6 group-hover:-rotate-3 transition-all duration-500">
                   <img 
-                    src="https://i.ibb.co/pB8Lh6yw/Whats-App-Image-2026-06-27-at-6-40-24-PM.jpg" 
+                    src="https://i.ibb.co/C5y1C69Z/Chat-GPT-Image-Jul-2-2026-03-47-44-PM-removebg-preview.png" 
                     alt="RojKhata Mobile App" 
-                    className="w-full h-full object-cover relative z-10" 
+                    className="w-full h-full object-contain filter drop-shadow-[0_15px_30px_rgba(0,0,0,0.8)] relative z-10" 
                   />
                 </div>
 

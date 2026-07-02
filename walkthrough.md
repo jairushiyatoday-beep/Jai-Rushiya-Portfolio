@@ -18,10 +18,10 @@
 
 Added a modern, Apple-level polished, immersive landing intro section featuring your application.
 
-### 1. Responsive App Mockup Hero Component (`VideoIntro.tsx`)
-- **Responsive Screen Presentation**: Instead of a foreground video, it renders a responsive `<picture>` tag matching your requested assets:
-  - **Desktop View**: Displays the desktop screenshot mockup (`https://i.ibb.co/B2T3YF8G/Screenshot-2026-07-02-140625.png`).
-  - **Mobile View**: Automatically switches to the mobile screen mockup (`https://i.ibb.co/pB8Lh6yw/Whats-App-Image-2026-06-27-at-6-40-24-PM.jpg`).
+- **Video inside smartphone frame**: Replaced the static app screenshot with the high-quality code video (`https://www.image2url.com/r2/default/videos/1782987599804-2e7f262b-8427-4126-91be-1fcc44a3bb01.mp4`).
+- **Premium Smartphone Bezel**: Created an HTML/CSS mobile device mockup enclosing the video. It features a physical bezel, Dynamic Island/notch structure (with lens and sensor styling), and a metallic rim border shadow.
+- **Overlap Prevention**: Adjusted the viewport bounds on the `.videoFrame` (`height: calc(100vh - 180px)` with a maximum height cap) to prevent it from overlapping the navigation bar on standard laptop and desktop screens.
+- **Glass Reflection Overlay**: Rendered a premium diagonal gradient overlaying the video to simulate real screen glass physics.
 - **Ambient Blurred Background**: A blurred duplicate video stretches fullscreen (`filter: blur(60px)`, `scale(1.15)`) acting as a dynamic ambient lighting layer.
 - **Typography & Structure**: Uppercase monochrome tagline, massive bold title stacked vertically ("Jai Rushiya"), and descriptive subtitle.
 - **GSAP Animations**: Fluid entry transitions when the page loads, animating text, mockup frame, and content with a premium cinematic feel.

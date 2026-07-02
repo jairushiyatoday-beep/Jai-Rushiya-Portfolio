@@ -6,7 +6,7 @@ import styles from './VideoIntro.module.css';
 import CinematicLayer from './CinematicLayer';
 import MagneticButton from './MagneticButton';
 
-const VIDEO_URL = 'https://www.image2url.com/r2/default/videos/1782980245879-3f834afc-cfc4-4cf7-8165-47214da817f7.mp4';
+const VIDEO_URL = 'https://www.image2url.com/r2/default/videos/1782987599804-2e7f262b-8427-4126-91be-1fcc44a3bb01.mp4';
 
 export default function VideoIntro() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -129,15 +129,26 @@ export default function VideoIntro() {
         {/* Right Column: Foreground Cinematic Video Frame */}
         <div className={styles.videoWrapper}>
           <div ref={videoFrameRef} className={styles.videoFrame}>
-            {/* Using a picture element to switch between mobile and desktop images */}
-            <picture>
-              <source media="(max-width: 768px)" srcSet="https://i.ibb.co/pB8Lh6yw/Whats-App-Image-2026-06-27-at-6-40-24-PM.jpg" />
-              <img
-                src="https://i.ibb.co/B2T3YF8G/Screenshot-2026-07-02-140625.png"
-                alt="App Opening Logo"
-                className={styles.foregroundImage}
+            <div className={styles.phoneBezel}>
+              {/* Dynamic Island / Notch */}
+              <div className={styles.phoneNotch}>
+                <div className={styles.phoneCamera} />
+                <div className={styles.phoneSensor} />
+              </div>
+
+              {/* Video inside phone screen */}
+              <video
+                className={styles.foregroundVideo}
+                src={VIDEO_URL}
+                autoPlay
+                loop
+                muted
+                playsInline
               />
-            </picture>
+
+              {/* Glass reflection overlay */}
+              <div className={styles.screenReflection} />
+            </div>
           </div>
         </div>
       </div>
